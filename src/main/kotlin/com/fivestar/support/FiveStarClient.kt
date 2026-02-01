@@ -145,9 +145,8 @@ class FiveStarClient(private val config: FiveStarClientConfig) {
         @Serializable
         data class ResponseTypesResponse(val types: List<ResponseType>? = null)
 
-        val result = post<ResponseTypesResponse>(
-            path = "/api/responses/types",
-            body = mapOf("clientId" to clientId)
+        val result = get<ResponseTypesResponse>(
+            path = "/api/responses/types?clientId=$clientId"
         )
         return result.types ?: emptyList()
     }
