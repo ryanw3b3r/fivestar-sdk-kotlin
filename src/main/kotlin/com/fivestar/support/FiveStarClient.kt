@@ -189,7 +189,8 @@ class FiveStarClient(private val config: FiveStarClientConfig) {
             @SerialName("customerId")
             val customerId: String,
             val email: String? = null,
-            val name: String? = null
+            val name: String? = null,
+            val metadata: kotlinx.serialization.json.JsonObject? = null
         )
 
         return post(
@@ -198,7 +199,8 @@ class FiveStarClient(private val config: FiveStarClientConfig) {
                 clientId = clientId,
                 customerId = customerId,
                 email = options?.email,
-                name = options?.name
+                name = options?.name,
+                metadata = options?.metadata
             )
         )
     }
@@ -249,7 +251,8 @@ class FiveStarClient(private val config: FiveStarClientConfig) {
             @SerialName("customerEmail")
             val customerEmail: String? = null,
             @SerialName("customerName")
-            val customerName: String? = null
+            val customerName: String? = null,
+            val metadata: kotlinx.serialization.json.JsonObject? = null
         )
 
         return post(
@@ -261,7 +264,8 @@ class FiveStarClient(private val config: FiveStarClientConfig) {
                 description = options.description,
                 responseTypeId = options.typeId,
                 customerEmail = options.email,
-                customerName = options.name
+                customerName = options.name,
+                metadata = options.metadata
             )
         )
     }

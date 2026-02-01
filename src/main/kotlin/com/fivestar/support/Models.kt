@@ -2,6 +2,7 @@ package com.fivestar.support
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.JsonObject
 
 /**
  * Response type (bug, feature request, etc.)
@@ -40,7 +41,8 @@ data class SubmitResponseOptions(
     @SerialName("typeId")
     val typeId: String,
     val email: String? = null,
-    val name: String? = null
+    val name: String? = null,
+    val metadata: JsonObject? = null
 )
 
 /**
@@ -60,7 +62,8 @@ data class SubmitResponseResult(
 @Serializable
 data class RegisterCustomerOptions(
     val email: String? = null,
-    val name: String? = null
+    val name: String? = null,
+    val metadata: JsonObject? = null
 )
 
 /**
